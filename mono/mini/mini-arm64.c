@@ -5053,7 +5053,7 @@ mono_arch_build_imt_trampoline (MonoVTable *vtable, MonoDomain *domain, MonoIMTC
 			arm_patch_rel (item->jmp_code, imt_entries [item->check_target_idx]->code_target, MONO_R_ARM64_BCC);
 	}
 
-	g_assert ((code - buf) < buf_len);
+	g_assert ((code - buf) <= buf_len);
 
 	mono_arch_flush_icache (buf, code - buf);
 
